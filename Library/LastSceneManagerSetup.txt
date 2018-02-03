@@ -1,0 +1,7 @@
+sceneSetups:
+- path: Assets/STW.unity
+  isLoaded: 1
+  isActive: 1
+- path: Assets/LeapMotion/Core/Examples/Attachment Hands/Attachment Hands Example.unity
+  isLoaded: 1
+  isActive: 0
