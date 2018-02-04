@@ -12,6 +12,7 @@ class LeapEventListener extends Listener {
 	private static Hand leftHand = new Hand();
 	private static Hand rightHand = new Hand();
 	private static double initY = 0;
+	private static boolean calibrated = false;
 
 	public void onFrame (Controller controller){
 		Frame frame = controller.frame();
@@ -22,18 +23,22 @@ class LeapEventListener extends Listener {
 		double dist = (Math.max(x, rightHand.wristPosition().getX()) - Math.min(x, rightHand.wristPosition().getX()));
 		double rad = dist / 2;
 		double startTime = System.currentTimeMillis();
-		while(!frame.hands().isEmpty()) {
+
+		while(!frame.hands().isEmpty() && !calibrated) {
 //			System.out.println("x: "+leftHand.wristPosition().getX()+"\ny: "+leftHand.wristPosition().getY()+"\nz: "
 //					+leftHand.wristPosition().getZ()+"\n");
 			calibrate(x, y, dist, startTime);
-			break;
+			calibrated = true;
+			System.out.println("while loop running");
 		}
+		System.out.println("initY "+ initY);
+		System.out.println("finalY "+ y);
+		System.out.println("deltaY " + (y - initY));
+		System.out.println("dist " + dist);
+		System.out.println(LeapMotionController.calcTurn(y - initY, dist));
 
-		System.out.println("HI " + (y - initY));
-		System.out.println(LeapMotionController.calcTurn(y - initY, 15));
-		
 		try {
-			Thread.sleep(50);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -64,6 +69,7 @@ class LeapEventListener extends Listener {
 	}
 
 	private boolean calibrate(double xVal, double yVal, double dist, double initialTime) {
+		System.out.println("calibrating");
 		double x = xVal, y = yVal, distance = dist;
 		while(System.currentTimeMillis() - initialTime <= 3000) {
 			if(!thresh(xVal, leftHand.wristPosition().getX(), 10)

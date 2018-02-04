@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="LeapJava">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../OurLessImp/OurDownloads/IDM/LeapDeveloperKit_3.2.1+45911_win/LeapSDK/lib/LeapJava.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://$PROJECT_DIR$/../../../../OurLessImp/OurDownloads/IDM/LeapDeveloperKit_3.2.1+45911_win/LeapSDK/lib/x64" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>
