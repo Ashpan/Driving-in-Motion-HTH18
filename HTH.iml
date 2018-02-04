@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="EclipseModuleManager">
-    <libelement value="file://C:/Users/Harsh/Downloads/LeapDeveloperKit_3.2.1_win/LeapDeveloperKit_3.2.1+45911_win/LeapSDK/lib/LeapJava.jar" />
+    <libelement value="file://$USER_HOME$/Downloads/LeapDeveloperKit_3.2.1_win/LeapDeveloperKit_3.2.1+45911_win/LeapSDK/lib/LeapJava.jar" />
     <varelement var="file://$LeapJava$" value="LeapJava" />
     <varelement var="file://$HTH2$" kind="src:" value="/HTH2" />
     <src_description expected_position="1">
       <src_folder value="file://$MODULE_DIR$/src" expected_position="1" />
     </src_description>
   </component>
-  <component name="NewModuleRootManager">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/bin" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
@@ -19,12 +19,12 @@
     <orderEntry type="module-library">
       <library name="LeapJava.jar">
         <CLASSES>
-          <root url="file://C:/Users/Harsh/Downloads/LeapDeveloperKit_3.2.1_win/LeapDeveloperKit_3.2.1+45911_win/LeapSDK/lib/LeapJava.jar" />
+          <root url="file://$USER_HOME$/Downloads/LeapDeveloperKit_3.2.1_win/LeapDeveloperKit_3.2.1+45911_win/LeapSDK/lib/LeapJava.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="LeapJava" level="project" />
+    <orderEntry type="library" name="LeapJava1" level="project" />
   </component>
 </module>

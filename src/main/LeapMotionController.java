@@ -31,15 +31,25 @@ class LeapEventListener extends Listener {
 			calibrated = true;
 			System.out.println("while loop running");
 		}
-		System.out.println("initY "+ initY);
-		System.out.println("finalY "+ y);
-		System.out.println("deltaY " + (y - initY));
-		System.out.println("dist " + dist);
+//		System.out.println("initY "+ initY);
+//		System.out.println("finalY "+ y);
+//		System.out.println("deltaY " + (y - initY));
+//		System.out.println("dist " + dist);
 		System.out.println(LeapMotionController.calcTurn(y - initY, dist));
 
 		try {
+			FileWriterFU.write(LeapMotionController.calcTurn(y - initY, dist));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		try {
+			FileWriterFU.delete();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
