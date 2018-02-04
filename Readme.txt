@@ -1,7 +1,3 @@
-Created for Hack the Hammer 2018.
+Created for Hack the Hammer 2018 to display Driving in Motion.
 
-
-Theme Name: Regna
-Theme URL: https://bootstrapmade.com/regna-bootstrap-onepage-template/
-Author: BootstrapMade.com
-Author URL: https://bootstrapmade.com
+Ashpan Raskar, Harsh Dawda, Hannah Guo, Nischay Uppal
