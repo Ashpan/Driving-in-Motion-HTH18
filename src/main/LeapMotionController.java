@@ -11,6 +11,7 @@ import com.leapmotion.leap.Listener;
 class LeapEventListener extends Listener {	
 	private static Hand leftHand = new Hand();
 	private static Hand rightHand = new Hand();
+	private static double initY = 0;
 
 	public void onFrame (Controller controller){
 		Frame frame = controller.frame();
@@ -22,10 +23,14 @@ class LeapEventListener extends Listener {
 		double rad = dist / 2;
 		double startTime = System.currentTimeMillis();
 		while(!frame.hands().isEmpty()) {
-			System.out.println("x: "+leftHand.wristPosition().getX()+"\ny: "+leftHand.wristPosition().getY()+"\nz: "
-					+leftHand.wristPosition().getZ()+"\n");
+//			System.out.println("x: "+leftHand.wristPosition().getX()+"\ny: "+leftHand.wristPosition().getY()+"\nz: "
+//					+leftHand.wristPosition().getZ()+"\n");
 			calibrate(x, y, dist, startTime);
+			break;
 		}
+
+		System.out.println("HI " + (y - initY));
+		System.out.println(LeapMotionController.calcTurn(y - initY, 15));
 		
 		try {
 			Thread.sleep(50);
@@ -64,9 +69,10 @@ class LeapEventListener extends Listener {
 			if(!thresh(xVal, leftHand.wristPosition().getX(), 10)
 					|| !thresh(yVal, leftHand.wristPosition().getY(), 10) 
 					||!thresh(dist, (Math.max(x, rightHand.wristPosition().getX()) - Math.min(x, rightHand.wristPosition().getX())) * 2, 10)) {
-				System.out.println(xVal + " " + leftHand.wristPosition().getX());
+//				System.out.println(xVal + " " + leftHand.wristPosition().getX());
 			}
 		}
+		initY = yVal;
 		return true;
 	}
 }
