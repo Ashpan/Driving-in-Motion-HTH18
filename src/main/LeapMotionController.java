@@ -21,11 +21,12 @@ class LeapEventListener extends Listener {
 		double dist = (Math.max(x, rightHand.wristPosition().getX()) - Math.min(x, rightHand.wristPosition().getX()));
 		double rad = dist / 2;
 		double startTime = System.currentTimeMillis();
-
 		while(!frame.hands().isEmpty()) {
-			System.out.println(calibrate(x, y, dist, startTime));
+			System.out.println("x: "+leftHand.wristPosition().getX()+"\ny: "+leftHand.wristPosition().getY()+"\nz: "
+					+leftHand.wristPosition().getZ()+"\n");
+			calibrate(x, y, dist, startTime);
 		}
-
+		
 		try {
 			Thread.sleep(50);
 		} catch (InterruptedException e) {
