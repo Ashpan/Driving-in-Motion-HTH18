@@ -22,8 +22,10 @@ class LeapEventListener extends Listener {
 		double rad = dist / 2;
 		double startTime = System.currentTimeMillis();
 
-		System.out.println(calibrate(x, y, dist, startTime));
-		
+		while(!frame.hands().isEmpty()) {
+			System.out.println(calibrate(x, y, dist, startTime));
+		}
+
 		try {
 			Thread.sleep(50);
 		} catch (InterruptedException e) {
@@ -48,7 +50,6 @@ class LeapEventListener extends Listener {
 	}
 
 	public void onFocusLost(Controller controller){
-		System.out.println("LAWL FK U");
 	}
 
 
@@ -56,16 +57,13 @@ class LeapEventListener extends Listener {
 		return (Math.max(startVal, currentVal) - Math.min(startVal, currentVal)) <= range;
 	}
 
-	// && !thresh(yVal, leftHand.wristPosition().getY(), 50) 
-	//	&& !thresh(dist, (Math.max(x, rightHand.wristPosition().getX()) - Math.min(x, rightHand.wristPosition().getX())) * 2, 50)) {
-
 	private boolean calibrate(double xVal, double yVal, double dist, double initialTime) {
 		double x = xVal, y = yVal, distance = dist;
 		while(System.currentTimeMillis() - initialTime <= 3000) {
-			System.out.println(System.currentTimeMillis() - initialTime);
-			if(!thresh(xVal, leftHand.wristPosition().getX(), 50)) {
+			if(!thresh(xVal, leftHand.wristPosition().getX(), 50)
+					&& !thresh(yVal, leftHand.wristPosition().getY(), 50) 
+					&& !thresh(dist, (Math.max(x, rightHand.wristPosition().getX()) - Math.min(x, rightHand.wristPosition().getX())) * 2, 50)) {
 				System.out.println(xVal + " " + leftHand.wristPosition().getX());
-				calibrate(x, y, distance, initialTime);
 			}
 		}
 		return true;
