@@ -60,9 +60,9 @@ class LeapEventListener extends Listener {
 	private boolean calibrate(double xVal, double yVal, double dist, double initialTime) {
 		double x = xVal, y = yVal, distance = dist;
 		while(System.currentTimeMillis() - initialTime <= 3000) {
-			if(!thresh(xVal, leftHand.wristPosition().getX(), 50)
-					&& !thresh(yVal, leftHand.wristPosition().getY(), 50) 
-					&& !thresh(dist, (Math.max(x, rightHand.wristPosition().getX()) - Math.min(x, rightHand.wristPosition().getX())) * 2, 50)) {
+			if(!thresh(xVal, leftHand.wristPosition().getX(), 10)
+					|| !thresh(yVal, leftHand.wristPosition().getY(), 10) 
+					||!thresh(dist, (Math.max(x, rightHand.wristPosition().getX()) - Math.min(x, rightHand.wristPosition().getX())) * 2, 10)) {
 				System.out.println(xVal + " " + leftHand.wristPosition().getX());
 			}
 		}
