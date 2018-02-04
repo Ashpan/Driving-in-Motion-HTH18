@@ -113,48 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &8453174
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 8453175}
-  - component: {fileID: 8453176}
-  m_Layer: 0
-  m_Name: Palm
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8453175
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 8453174}
-  m_LocalRotation: {x: 0.7071067, y: 0.00000014611093, z: 0.00000014611093, w: -0.7071068}
-  m_LocalPosition: {x: -0.08000005, y: -0.000000028610229, z: 0.11999997}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1300801423}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8453176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 8453174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 1300801424}
-  attachmentPoint: 4
 --- !u!1 &11486572
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _eyeType:
     _orderType: 3
-  _overrideEyePosition: 1
+  _overrideEyePosition: 0
 --- !u!114 &11486575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4499ae867a57a90449cb9069c466ade0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _depthTextureMode: 1
+  _depthTextureMode: 0
 --- !u!20 &11486576
 Camera:
   m_ObjectHideFlags: 0
@@ -289,7 +247,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb8f8839ee256bb458e1657c1ee40572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deviceOffsets: []
+  _deviceOffsets:
+  - DeviceName: oculus
+    HeightOffset: 0
   moveUpKey: 0
   moveDownKey: 0
   stepSize: 0.1
@@ -532,7 +492,7 @@ GameObject:
   - component: {fileID: 41389325}
   - component: {fileID: 41389326}
   m_Layer: 0
-  m_Name: Attachment Hand (Left)
+  m_Name: Attachment Hand (Right)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -548,8 +508,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1147155015}
-  - {fileID: 680676835}
   - {fileID: 1196606715}
   - {fileID: 54453161}
   - {fileID: 1032835624}
@@ -558,7 +516,7 @@ Transform:
   - {fileID: 689183291}
   - {fileID: 74475612}
   m_Father: {fileID: 189448756}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &41389326
 MonoBehaviour:
@@ -571,28 +529,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f743acdc0955f349b54c7a240435271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wrist: {fileID: 1147155014}
-  palm: {fileID: 680676836}
-  thumbProximalJoint: {fileID: 0}
-  thumbDistalJoint: {fileID: 0}
-  thumbTip: {fileID: 0}
-  indexKnuckle: {fileID: 0}
-  indexMiddleJoint: {fileID: 0}
-  indexDistalJoint: {fileID: 0}
-  indexTip: {fileID: 0}
-  middleKnuckle: {fileID: 0}
-  middleMiddleJoint: {fileID: 0}
-  middleDistalJoint: {fileID: 0}
-  middleTip: {fileID: 0}
-  ringKnuckle: {fileID: 0}
-  ringMiddleJoint: {fileID: 0}
-  ringDistalJoint: {fileID: 0}
-  ringTip: {fileID: 0}
-  pinkyKnuckle: {fileID: 0}
-  pinkyMiddleJoint: {fileID: 0}
-  pinkyDistalJoint: {fileID: 0}
-  pinkyTip: {fileID: 0}
-  _chirality: 0
+  wrist: {fileID: 1196606714}
+  palm: {fileID: 54453160}
+  thumbProximalJoint: {fileID: 1032835623}
+  thumbDistalJoint: {fileID: 1883586276}
+  thumbTip: {fileID: 266856076}
+  indexKnuckle: {fileID: 1408244860}
+  indexMiddleJoint: {fileID: 362540215}
+  indexDistalJoint: {fileID: 1769762661}
+  indexTip: {fileID: 801710432}
+  middleKnuckle: {fileID: 457174336}
+  middleMiddleJoint: {fileID: 1671515519}
+  middleDistalJoint: {fileID: 1811656211}
+  middleTip: {fileID: 372778012}
+  ringKnuckle: {fileID: 689183290}
+  ringMiddleJoint: {fileID: 895799943}
+  ringDistalJoint: {fileID: 1870428530}
+  ringTip: {fileID: 760587168}
+  pinkyKnuckle: {fileID: 74475613}
+  pinkyMiddleJoint: {fileID: 1531519023}
+  pinkyDistalJoint: {fileID: 522600406}
+  pinkyTip: {fileID: 1634442782}
+  _chirality: 1
   _isTracked: 0
 --- !u!1 &46299139
 GameObject:
@@ -692,8 +650,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 4
 --- !u!4 &54453161
 Transform:
   m_ObjectHideFlags: 0
@@ -706,7 +664,7 @@ Transform:
   m_Children:
   - {fileID: 557313549}
   m_Father: {fileID: 41389325}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &74475611
 GameObject:
@@ -737,7 +695,7 @@ Transform:
   - {fileID: 1716909846}
   - {fileID: 1531519022}
   m_Father: {fileID: 41389325}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &74475613
 MonoBehaviour:
@@ -750,8 +708,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 262144
 --- !u!1 &105120560
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,8 +879,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 131072
 --- !u!4 &111871133
 Transform:
   m_ObjectHideFlags: 0
@@ -1414,7 +1372,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1300801423}
-  - {fileID: 1282554881}
   - {fileID: 41389325}
   m_Father: {fileID: 13100235}
   m_RootOrder: 2
@@ -1430,7 +1387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 837d86160f18abd408508cb2e0279f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attachmentPoints: 6
+  _attachmentPoints: 4194302
 --- !u!114 &189448758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1442,7 +1399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00639652ed959bc428ff1f010f5dd5f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
+  attachmentHand: {fileID: 41389326}
 --- !u!114 &189448759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1454,7 +1411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00639652ed959bc428ff1f010f5dd5f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
+  attachmentHand: {fileID: 1300801424}
 --- !u!1 &189968153
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,8 +1998,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 32
 --- !u!4 &266856077
 Transform:
   m_ObjectHideFlags: 0
@@ -2057,48 +2014,6 @@ Transform:
   m_Father: {fileID: 1883586275}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &268201041
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 268201042}
-  - component: {fileID: 268201043}
-  m_Layer: 0
-  m_Name: Palm
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &268201042
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 268201041}
-  m_LocalRotation: {x: 0.7071067, y: 0.00000008429371, z: 0.00000008429369, w: -0.7071068}
-  m_LocalPosition: {x: 0.079999976, y: -0.000000028610232, z: 0.12000001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1282554881}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &268201043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 268201041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 1282554882}
-  attachmentPoint: 4
 --- !u!1 &271462195
 GameObject:
   m_ObjectHideFlags: 0
@@ -2432,8 +2347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 1024
 --- !u!4 &326403808
 Transform:
   m_ObjectHideFlags: 0
@@ -2447,7 +2362,7 @@ Transform:
   - {fileID: 1827925084}
   - {fileID: 1635190766}
   m_Father: {fileID: 1300801423}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &352673221
 GameObject:
@@ -2633,8 +2548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 128
 --- !u!1 &372778011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2662,8 +2577,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 8192
 --- !u!4 &372778013
 Transform:
   m_ObjectHideFlags: 0
@@ -2720,8 +2635,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 256
 --- !u!1 &394036786
 GameObject:
   m_ObjectHideFlags: 0
@@ -3048,8 +2963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 4096
 --- !u!1 &449223701
 GameObject:
   m_ObjectHideFlags: 0
@@ -3108,8 +3023,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 1024
 --- !u!4 &457174337
 Transform:
   m_ObjectHideFlags: 0
@@ -3123,7 +3038,7 @@ Transform:
   - {fileID: 1263177449}
   - {fileID: 1671515518}
   m_Father: {fileID: 41389325}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &460569611
 GameObject:
@@ -3254,8 +3169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 512
 --- !u!4 &477727596
 Transform:
   m_ObjectHideFlags: 0
@@ -3442,8 +3357,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 1048576
 --- !u!1 &525184256
 GameObject:
   m_ObjectHideFlags: 0
@@ -3762,7 +3677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c592f16851a620743868a31232613370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _modelsParent: {fileID: 0}
+  _modelsParent: {fileID: 487834285}
   ModelPool: []
 --- !u!114 &575511662
 MonoBehaviour:
@@ -3776,13 +3691,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 025cc0fa7b46aa541aba29d28d35ac09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  editTimePose: 0
-  _isHeadMounted: 0
-  _temporalWarping: {fileID: 0}
+  editTimePose: 1
+  _isHeadMounted: 1
+  _temporalWarping: {fileID: 1571381170}
   _frameOptimization: 0
   _physicsExtrapolation: 1
   _physicsExtrapolationTime: 0.011111111
-  _updateHandInPrecull: 0
+  _updateHandInPrecull: 1
 --- !u!114 &575511663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3893,8 +3808,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 2
 --- !u!4 &593673685
 Transform:
   m_ObjectHideFlags: 0
@@ -3907,7 +3822,7 @@ Transform:
   m_Children:
   - {fileID: 780624578}
   m_Father: {fileID: 1300801423}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &597687210
 GameObject:
@@ -4007,8 +3922,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 8
 --- !u!4 &602482290
 Transform:
   m_ObjectHideFlags: 0
@@ -4022,49 +3937,7 @@ Transform:
   - {fileID: 1409227694}
   - {fileID: 2079288361}
   m_Father: {fileID: 1300801423}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &603867916
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 603867918}
-  - component: {fileID: 603867917}
-  m_Layer: 0
-  m_Name: Wrist
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &603867917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 603867916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 1282554882}
-  attachmentPoint: 2
---- !u!4 &603867918
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 603867916}
-  m_LocalRotation: {x: 0.7071067, y: 0.00000008429371, z: 0.00000008429369, w: -0.7071068}
-  m_LocalPosition: {x: 0.08436384, y: -0.03101116, z: 0.11350002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1282554881}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &629367193
 GameObject:
@@ -4421,48 +4294,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 675171071}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &680676834
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 680676835}
-  - component: {fileID: 680676836}
-  m_Layer: 0
-  m_Name: Palm
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &680676835
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 680676834}
-  m_LocalRotation: {x: 0.7071067, y: 0.00000014611093, z: 0.00000014611093, w: -0.7071068}
-  m_LocalPosition: {x: -0.08000005, y: -0.000000028610229, z: 0.11999997}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 41389325}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &680676836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 680676834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 41389326}
-  attachmentPoint: 4
 --- !u!1 &689183289
 GameObject:
   m_ObjectHideFlags: 0
@@ -4490,8 +4321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 16384
 --- !u!4 &689183291
 Transform:
   m_ObjectHideFlags: 0
@@ -4505,7 +4336,7 @@ Transform:
   - {fileID: 840185102}
   - {fileID: 895799942}
   m_Father: {fileID: 41389325}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &689524586
 GameObject:
@@ -4942,8 +4773,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 131072
 --- !u!4 &760587169
 Transform:
   m_ObjectHideFlags: 0
@@ -4999,8 +4830,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 2097152
 --- !u!1 &780624577
 GameObject:
   m_ObjectHideFlags: 0
@@ -5059,8 +4890,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 512
 --- !u!4 &801710433
 Transform:
   m_ObjectHideFlags: 0
@@ -5636,8 +5467,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 32768
 --- !u!1 &899789138
 GameObject:
   m_ObjectHideFlags: 0
@@ -6162,8 +5993,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 8
 --- !u!4 &1032835624
 Transform:
   m_ObjectHideFlags: 0
@@ -6177,7 +6008,7 @@ Transform:
   - {fileID: 460569612}
   - {fileID: 1883586275}
   m_Father: {fileID: 41389325}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1035686621
 GameObject:
@@ -7024,50 +6855,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
---- !u!1 &1147155013
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1147155015}
-  - component: {fileID: 1147155014}
-  m_Layer: 0
-  m_Name: Wrist
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1147155014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1147155013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 41389326}
-  attachmentPoint: 2
---- !u!4 &1147155015
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1147155013}
-  m_LocalRotation: {x: 0.7071067, y: 0.00000014611093, z: 0.00000014611093, w: -0.7071068}
-  m_LocalPosition: {x: -0.084363915, y: -0.03101116, z: 0.11349996}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 41389325}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 524288
 --- !u!1 &1166197490
 GameObject:
   m_ObjectHideFlags: 0
@@ -7308,8 +7097,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 2
 --- !u!4 &1196606715
 Transform:
   m_ObjectHideFlags: 0
@@ -7322,7 +7111,7 @@ Transform:
   m_Children:
   - {fileID: 1393873880}
   m_Father: {fileID: 41389325}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1206546616
 GameObject:
@@ -7954,71 +7743,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1281420176}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1282554880
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1282554881}
-  - component: {fileID: 1282554882}
-  m_Layer: 0
-  m_Name: Attachment Hand (Right)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1282554881
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1282554880}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 603867918}
-  - {fileID: 268201042}
-  m_Father: {fileID: 189448756}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1282554882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1282554880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f743acdc0955f349b54c7a240435271, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wrist: {fileID: 603867917}
-  palm: {fileID: 268201043}
-  thumbProximalJoint: {fileID: 0}
-  thumbDistalJoint: {fileID: 0}
-  thumbTip: {fileID: 0}
-  indexKnuckle: {fileID: 0}
-  indexMiddleJoint: {fileID: 0}
-  indexDistalJoint: {fileID: 0}
-  indexTip: {fileID: 0}
-  middleKnuckle: {fileID: 0}
-  middleMiddleJoint: {fileID: 0}
-  middleDistalJoint: {fileID: 0}
-  middleTip: {fileID: 0}
-  ringKnuckle: {fileID: 0}
-  ringMiddleJoint: {fileID: 0}
-  ringDistalJoint: {fileID: 0}
-  ringTip: {fileID: 0}
-  pinkyKnuckle: {fileID: 0}
-  pinkyMiddleJoint: {fileID: 0}
-  pinkyDistalJoint: {fileID: 0}
-  pinkyTip: {fileID: 0}
-  _chirality: 1
-  _isTracked: 0
 --- !u!1 &1288835893
 GameObject:
   m_ObjectHideFlags: 0
@@ -8329,8 +8053,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1487163685}
-  - {fileID: 8453175}
   - {fileID: 593673685}
   - {fileID: 1998410775}
   - {fileID: 602482290}
@@ -8352,27 +8074,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f743acdc0955f349b54c7a240435271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wrist: {fileID: 1487163684}
-  palm: {fileID: 8453176}
-  thumbProximalJoint: {fileID: 0}
-  thumbDistalJoint: {fileID: 0}
-  thumbTip: {fileID: 0}
-  indexKnuckle: {fileID: 0}
-  indexMiddleJoint: {fileID: 0}
-  indexDistalJoint: {fileID: 0}
-  indexTip: {fileID: 0}
-  middleKnuckle: {fileID: 0}
-  middleMiddleJoint: {fileID: 0}
-  middleDistalJoint: {fileID: 0}
-  middleTip: {fileID: 0}
-  ringKnuckle: {fileID: 0}
-  ringMiddleJoint: {fileID: 0}
-  ringDistalJoint: {fileID: 0}
-  ringTip: {fileID: 0}
-  pinkyKnuckle: {fileID: 0}
-  pinkyMiddleJoint: {fileID: 0}
-  pinkyDistalJoint: {fileID: 0}
-  pinkyTip: {fileID: 0}
+  wrist: {fileID: 593673684}
+  palm: {fileID: 1998410774}
+  thumbProximalJoint: {fileID: 602482289}
+  thumbDistalJoint: {fileID: 2079288362}
+  thumbTip: {fileID: 1690107034}
+  indexKnuckle: {fileID: 2018920668}
+  indexMiddleJoint: {fileID: 1391263030}
+  indexDistalJoint: {fileID: 376851380}
+  indexTip: {fileID: 477727595}
+  middleKnuckle: {fileID: 326403807}
+  middleMiddleJoint: {fileID: 1635190767}
+  middleDistalJoint: {fileID: 435512179}
+  middleTip: {fileID: 1390747673}
+  ringKnuckle: {fileID: 2048082924}
+  ringMiddleJoint: {fileID: 2008156289}
+  ringDistalJoint: {fileID: 1547423080}
+  ringTip: {fileID: 111871132}
+  pinkyKnuckle: {fileID: 1596634627}
+  pinkyMiddleJoint: {fileID: 1141904584}
+  pinkyDistalJoint: {fileID: 1383826730}
+  pinkyTip: {fileID: 780421943}
   _chirality: 0
   _isTracked: 0
 --- !u!1 &1316522585
@@ -8772,8 +8494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 1048576
 --- !u!1 &1390747672
 GameObject:
   m_ObjectHideFlags: 0
@@ -8801,8 +8523,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 8192
 --- !u!4 &1390747674
 Transform:
   m_ObjectHideFlags: 0
@@ -8859,8 +8581,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 128
 --- !u!1 &1393873879
 GameObject:
   m_ObjectHideFlags: 0
@@ -8919,8 +8641,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 64
 --- !u!4 &1408244861
 Transform:
   m_ObjectHideFlags: 0
@@ -8934,7 +8656,7 @@ Transform:
   - {fileID: 1581863436}
   - {fileID: 362540214}
   m_Father: {fileID: 41389325}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1409227693
 GameObject:
@@ -9344,48 +9066,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1481416562}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1487163683
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1487163685}
-  - component: {fileID: 1487163684}
-  m_Layer: 0
-  m_Name: Wrist
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1487163684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1487163683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 1300801424}
-  attachmentPoint: 2
---- !u!4 &1487163685
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1487163683}
-  m_LocalRotation: {x: 0.7071067, y: 0.00000014611093, z: 0.00000014611093, w: -0.7071068}
-  m_LocalPosition: {x: -0.084363915, y: -0.03101116, z: 0.11349996}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1300801423}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1491428516
 GameObject:
   m_ObjectHideFlags: 0
@@ -9641,8 +9321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 524288
 --- !u!1 &1547423078
 GameObject:
   m_ObjectHideFlags: 0
@@ -9685,8 +9365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 65536
 --- !u!1 &1571381168
 GameObject:
   m_ObjectHideFlags: 0
@@ -9729,9 +9409,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21f7214440054f59a5d2da168b3e2dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  provider: {fileID: 0}
+  provider: {fileID: 575511662}
   _headTransform: {fileID: 11486573}
-  _trackingAnchor: {fileID: 0}
+  _trackingAnchor: {fileID: 13100235}
   _recenter: 114
   _tweenImageWarping: 0
   _tweenRotationalWarping: 0
@@ -9838,7 +9518,7 @@ Transform:
   - {fileID: 1042039111}
   - {fileID: 1141904583}
   m_Father: {fileID: 1300801423}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1596634627
 MonoBehaviour:
@@ -9851,8 +9531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 262144
 --- !u!1 &1618038257
 GameObject:
   m_ObjectHideFlags: 0
@@ -10138,8 +9818,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 2097152
 --- !u!1 &1635190765
 GameObject:
   m_ObjectHideFlags: 0
@@ -10182,8 +9862,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 2048
 --- !u!1 &1641153143
 GameObject:
   m_ObjectHideFlags: 0
@@ -10399,8 +10079,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 2048
 --- !u!1 &1690107033
 GameObject:
   m_ObjectHideFlags: 0
@@ -10428,8 +10108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 32
 --- !u!4 &1690107035
 Transform:
   m_ObjectHideFlags: 0
@@ -11039,8 +10719,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 256
 --- !u!1 &1772368974
 GameObject:
   m_ObjectHideFlags: 0
@@ -11225,8 +10905,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 4096
 --- !u!1 &1822391408
 GameObject:
   m_ObjectHideFlags: 0
@@ -11513,8 +11193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 65536
 --- !u!1 &1883586274
 GameObject:
   m_ObjectHideFlags: 0
@@ -11557,8 +11237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 41389326}
+  attachmentPoint: 16
 --- !u!1 &1885053279
 GameObject:
   m_ObjectHideFlags: 0
@@ -12216,8 +11896,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 4
 --- !u!4 &1998410775
 Transform:
   m_ObjectHideFlags: 0
@@ -12230,7 +11910,7 @@ Transform:
   m_Children:
   - {fileID: 542896046}
   m_Father: {fileID: 1300801423}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2008156287
 GameObject:
@@ -12274,8 +11954,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 32768
 --- !u!1 &2010002417
 GameObject:
   m_ObjectHideFlags: 0
@@ -12374,22 +12054,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 64
 --- !u!4 &2018920669
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2018920667}
-  m_LocalRotation: {x: 0.19850895, y: -0.54938185, z: -0.81014264, w: -0.04942221}
+  m_LocalRotation: {x: 0.19850898, y: -0.5493819, z: -0.81014276, w: -0.049422216}
   m_LocalPosition: {x: -0.24613261, y: -0.11117952, z: 0.27633592}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1391263029}
   - {fileID: 449223702}
   m_Father: {fileID: 1300801423}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2030942014
 GameObject:
@@ -12489,8 +12169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 16384
 --- !u!4 &2048082925
 Transform:
   m_ObjectHideFlags: 0
@@ -12504,7 +12184,7 @@ Transform:
   - {fileID: 1138166029}
   - {fileID: 2008156288}
   m_Father: {fileID: 1300801423}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2049594803
 GameObject:
@@ -12721,8 +12401,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12011a4b27c58f4f8969e87c61ab8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentHand: {fileID: 0}
-  attachmentPoint: 0
+  attachmentHand: {fileID: 1300801424}
+  attachmentPoint: 16
 --- !u!1 &2080705688
 GameObject:
   m_ObjectHideFlags: 0
