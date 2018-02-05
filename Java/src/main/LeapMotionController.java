@@ -13,6 +13,7 @@ class LeapEventListener extends Listener {
 	private static Hand rightHand = new Hand();
 	private static double initY = 0;
 	private static boolean calibrated = false;
+	private static boolean moving = false;
 
 	public void onFrame (Controller controller){
 		Frame frame = controller.frame();
@@ -23,6 +24,10 @@ class LeapEventListener extends Listener {
 		double dist = (Math.max(x, rightHand.wristPosition().getX()) - Math.min(x, rightHand.wristPosition().getX()));
 		double rad = dist / 2;
 		double startTime = System.currentTimeMillis();
+
+        while(frame.hands().isEmpty()){
+            moving = false;
+        }
 
 		while(!frame.hands().isEmpty() && !calibrated) {
 //			System.out.println("x: "+leftHand.wristPosition().getX()+"\ny: "+leftHand.wristPosition().getY()+"\nz: "
@@ -42,6 +47,13 @@ class LeapEventListener extends Listener {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
+		try {
+			FileWriterFU.writespeed(moving);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -54,7 +66,7 @@ class LeapEventListener extends Listener {
 //		}
 	}
 
-	public void onInit(Controller controller){
+        public void onInit(Controller controller){
 		System.out.println("Initialized");
 	}
 
@@ -64,14 +76,17 @@ class LeapEventListener extends Listener {
 	}
 
 	public void onDisconnect(Controller controller){
-		System.out.println("Disconnected");
+	    System.out.println("Disconnected");
+	    moving = false;
 	}
 
 	public void onFocusGained(Controller controller){
+	    moving = true;
 	}
 
 	public void onFocusLost(Controller controller){
-	}
+        moving = false;
+    }
 
 
 	private boolean thresh(double startVal, double currentVal, double range) {
