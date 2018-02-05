@@ -47,11 +47,11 @@ class LeapEventListener extends Listener {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		try {
-			FileWriterFU.delete();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			FileWriterFU.delete();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 	}
 
 	public void onInit(Controller controller){
