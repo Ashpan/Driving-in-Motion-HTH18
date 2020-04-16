@@ -2,6 +2,8 @@
 ## This project was accomplished using Java, C# (within Unity), and a Leap Motion hand sensor
 Run both the main function in "LeapMotionController.java" as well as the Unity Project to begin.  
 
+Using Unity Version: 2017.3.0f3
+
 The java program will be detecting hands and writing the data to a file, which will be read by C#.  
 
 If you need to test it out but do not have a Leap Motion accessible to you, open the Unity Project, and also navigate to `\Unity Stuff\HackHammerNU\Assets\Resources`.  
