@@ -48,11 +48,7 @@ class LeapEventListener extends Listener {
 			e.printStackTrace();
 		}
 
-		try {
-			FileWriterFU.writespeed(moving);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+
 
 		try {
 			Thread.sleep(1000);
@@ -68,7 +64,13 @@ class LeapEventListener extends Listener {
 
         public void onInit(Controller controller){
 		System.out.println("Initialized");
-	}
+			try {
+//				FileWriterFU.writespeed(moving);
+				FileWriterFU.writespeed(false);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 
 	public void onConnect(Controller controller){
 		System.out.println("Connected");

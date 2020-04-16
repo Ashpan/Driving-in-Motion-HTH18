@@ -27,7 +27,7 @@ public class FileWriterFU {
 //        writer.close();
 		RandomAccessFile f = new RandomAccessFile(new File("C:\\OurData\\OurCurrent\\Programming\\Driving-in-Motion-HTH18\\Unity Stuff\\HackHammerNU\\Assets\\Resources\\moving.txt"), "rw");
 		f.seek(0); // to the beginning
-		f.writeBoolean(moving);
+		f.write(Boolean.toString(moving).getBytes());
 		f.close();
 	}
 }
